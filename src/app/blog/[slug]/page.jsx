@@ -31,11 +31,14 @@ const SinglePagePost = async ({ params }) => {
   //const post = await getPost(slug);
   return (
     <div className={styles.container}>
-      {post.img && (
-        <div className={styles.imgContainer}>
-          <Image src={post.img} alt="" fill className={styles.img} />
-        </div>
-      )}
+      <div className={styles.imgContainer}>
+        <Image
+          src={post?.img ? post?.img : "/noavatar.png"}
+          alt=""
+          fill
+          className={styles.img}
+        />
+      </div>
 
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post.title}</h1>
